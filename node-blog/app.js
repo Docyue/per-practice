@@ -4,6 +4,8 @@
 var express = require('express');
 // 家在模版应用
 var swig = require('swig');
+// 加载数据库模块
+var mongoose = require('mongoose');
 // 创建应用
 var app = express();
 
@@ -41,4 +43,5 @@ app.get('/',function(req,res,next){
 
 
 // 监听http请求
+mongoose.connect();
 app.listen(8081);
