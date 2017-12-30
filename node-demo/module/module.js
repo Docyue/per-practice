@@ -38,3 +38,9 @@ require('../main.js')
 // console.log(module.exports === exports); // true
 
 
+// 全局变量在所有模块中均可使用。 但以下变量的作用域只在模块内;
+// __dirname
+// __filename
+// exports
+// module
+// require()
