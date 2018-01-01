@@ -39,3 +39,12 @@
 // stdin stdout 提供了操作输入数据和输出数据的方法，通常称为io操作
 // stadin 标准输入流
 // stadout 标准输出流	
+
+// ＃＃＃buffer类
+// 可以用于更好的操作二进制数据的类
+const buf = Buffer.alloc(5);
+const buf0 = Buffer.alloc(5, 'a');
+const buf1 = Buffer.from('1234');
+console.log(buf);
+console.log(buf0);
+console.log(buf1);
