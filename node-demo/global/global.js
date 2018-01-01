@@ -42,9 +42,15 @@
 
 // ＃＃＃buffer类
 // 可以用于更好的操作二进制数据的类
+// 类方法：
 const buf = Buffer.alloc(5);
 const buf0 = Buffer.alloc(5, 'a');
-const buf1 = Buffer.from('1234');
-console.log(buf);
-console.log(buf0);
-console.log(buf1);
+const buf1 = Buffer.allocUnsafe(5); // 以这种方式创建的 Buffer 实例的底层内存是未初始化的。 新创建的 Buffer 的内容是未知的，且可能包含敏感数据。 可以使用 buf.fill(0) 初始化 Buffer 实例为0。
+const buf2 = Buffer.allocUnsafeSlow(5); // 以这种方式创建的 Buffer 实例的底层内存是未初始化的。 新创建的 Buffer 的内容是未知的，且可能包含敏感数据。 可以使用 buf.fill(0) 初始化 Buffer 实例为0。
+const buf3 = Buffer.byteLength('\u00bd + \u00bc = \u00be','utf8'); // 要计算长度的值
+const buf4 = Buffer.compare(Buffer.from('1234'),Buffer.from('0123')); //比较 buf1 和 buf2 ，通常用于 Buffer 实例数组的排序。
+const buf5 = Buffer.concat(list); // 返回一个合并了 list 中所有 Buffer 实例的新建的 Buffer 
+const buf6 = Buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]); // 通过一个八位字节的 array 创建一个新的 Buffer 
+const boolean = Buffer.isEncoding(encoding); // 如果 encoding 是一个支持的字符编码则返回 true，否则返回 false
+const boolean = Buffer.isBuffer(obj); // 如果 obj 是一个 Buffer 则返回 true ，否则返回 false 。
+const boolean = Buffer.poolSize(encoding) // 这是用于决定预分配的、内部 Buffer 实例池的大小的字节数。 这个值可以修改
