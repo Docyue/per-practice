@@ -54,3 +54,4 @@ const buf6 = Buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]); // 通过一个�
 const boolean = Buffer.isEncoding(encoding); // 如果 encoding 是一个支持的字符编码则返回 true，否则返回 false
 const boolean = Buffer.isBuffer(obj); // 如果 obj 是一个 Buffer 则返回 true ，否则返回 false 。
 const boolean = Buffer.poolSize(encoding) // 这是用于决定预分配的、内部 Buffer 实例池的大小的字节数。 这个值可以修改
+
