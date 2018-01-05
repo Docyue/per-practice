@@ -56,3 +56,4 @@ const boolean = Buffer.isBuffer(obj); // 如果 obj 是一个 Buffer 则返回 t
 const boolean = Buffer.poolSize(encoding) // 这是用于决定预分配的、内部 Buffer 实例池的大小的字节数。 这个值可以修改
 
 
+
